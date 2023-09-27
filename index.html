@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Text Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 300px;
+            font-family: Arial, sans-serif; 
+            font-size: 16px; 
+            color: black; 
+            background-color: white; 
+        }
+
+        button {
+            margin: 10px;
+            padding: 5px 10px;
+            border: 2px;
+            border-color: rgb(199, 166, 118);
+        }
+    </style>
+</head>
+<body>
+    <h1>Basic Text Editor</h1>
+    <textarea id="editor"></textarea>
+    <div>
+        <label for="fontSize">Font Size:</label>
+        <select id="fontSize" onchange="changeFontSize()">
+            <option value="12px">12px</option>
+            <option value="16px">16px</option>
+            <option value="20px">20px</option>
+            <option value="24px">24px</option>
+        </select>
+
+        <label for="fontType">Font Type:</label>
+        <select id="fontType" onchange="changeFontType()">
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Times New Roman, serif">Times New Roman</option>
+            <option value="Courier New, monospace">Courier New</option>
+        </select>
+
+        <label for="textColor">Text Color:</label>
+        <input type="color" id="textColor" onchange="changeTextColor()">
+
+        <label for="bgColor">Background Color:</label>
+        <input type="color" id="bgColor" onchange="changeBackgroundColor()">
+    </div>
+    <div>
+        <button onclick="saveText()">Save</button>
+        <button onclick="loadText()">Load</button>
+        <button onclick="formatText()">Format</button>
+    </div>
+    <script>
+        function changeFontSize() {
+            const fontSize = document.getElementById('fontSize').value;
+            document.getElementById('editor').style.fontSize = fontSize;
+        }
+
+        function changeFontType() {
+            const fontType = document.getElementById('fontType').value;
+            document.getElementById('editor').style.fontFamily = fontType;
+        }
+
+        function changeTextColor() {
+            const textColor = document.getElementById('textColor').value;
+            document.getElementById('editor').style.color = textColor;
+        }
+
+        function changeBackgroundColor() {
+            const bgColor = document.getElementById('bgColor').value;
+            document.getElementById('editor').style.backgroundColor = bgColor;
+        }
+
+        
+    </script>
+</body>
+</html>
